@@ -1,0 +1,3 @@
+"mbean","object","attribute","graph title"
+"service3_mbean1","mbean1_object","FreeMemory,b","Bytes Received,Bytes Sent"
+"service3_mbean2","mbean2_object","a,b,c,d,e","Error Count,Max Time,Processing Time,Request Count,Max Time"

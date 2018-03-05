@@ -1,0 +1,3 @@
+09:54:25 INFO  App:50 - Input File -> opennms-configuration.xlsx
+09:54:26 INFO  App:54 - Converted XLSX file into CSV file(s)
+09:54:26 INFO  App:68 - Successfully generated all xml & graph files

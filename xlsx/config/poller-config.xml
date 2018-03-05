@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<poller-configuration pathOutageEnabled="false" serviceUnresponsiveEnabled="false" threads="30">
+    <node-outage status="On">
+        <critical_service name="ICMP"/>
+    </node-outage>
+    <package name="example1">
+        <filter>IPADDR != '0.0.0.0'</filter>
+        <rrd step="300">
+            <rra>RRA:AVERAGE:0.5:1:2016</rra>
+            <rra>RRA:AVERAGE:0.5:12:1488</rra>
+            <rra>RRA:AVERAGE:0.5:288:366</rra>
+            <rra>RRA:MAX:0.5:288:366</rra>
+            <rra>RRA:MIN:0.5:288:366</rra>
+        </rrd>
+        <service interval="100000" name="service1" status="On" user-defined="user-defined">
+            <parameter key="friendly-name" value="service1"/>
+            <parameter key="protocol" value="rmi"/>
+            <parameter key="ds-name" value="service1"/>
+            <parameter key="port" value="1234"/>
+            <parameter key="rrd-base-name" value="java"/>
+            <parameter key="thresholding-enabled" value="true"/>
+            <parameter key="urlPath" value="/jmxrmi"/>
+            <parameter key="retry" value="2"/>
+            <parameter key="timeout" value="300"/>
+        </service>
+        <service interval="100000" name="service2" status="On" user-defined="user-defined">
+            <parameter key="friendly-name" value="service2"/>
+            <parameter key="protocol" value="rmi"/>
+            <parameter key="ds-name" value="service2"/>
+            <parameter key="port" value="4321"/>
+            <parameter key="rrd-base-name" value="java"/>
+            <parameter key="thresholding-enabled" value="true"/>
+            <parameter key="urlPath" value="/jmxrmi"/>
+            <parameter key="retry" value="2"/>
+            <parameter key="timeout" value="300"/>
+        </service>
+        <service interval="100000" name="service3" status="On" user-defined="user-defined">
+            <parameter key="friendly-name" value="service3"/>
+            <parameter key="protocol" value="rmi"/>
+            <parameter key="ds-name" value="service3"/>
+            <parameter key="port" value="1222"/>
+            <parameter key="rrd-base-name" value="java"/>
+            <parameter key="thresholding-enabled" value="true"/>
+            <parameter key="urlPath" value="/jmxrmi"/>
+            <parameter key="retry" value="2"/>
+            <parameter key="timeout" value="300"/>
+        </service>
+        <downtime begin="0" end="30000" interval="30000"/>
+        <downtime begin="300000" end="43200000" interval="300000"/>
+        <downtime begin="43200000" end="432000000" interval="600000"/>
+        <downtime begin="432000000" interval="3600000"/>
+    </package>
+    <monitor class-name="org.opennms.netmgt.poller.monitors.Jsr160Monitor" service="service1"/>
+    <monitor class-name="org.opennms.netmgt.poller.monitors.Jsr160Monitor" service="service2"/>
+    <monitor class-name="org.opennms.netmgt.poller.monitors.Jsr160Monitor" service="service3"/>
+</poller-configuration>
