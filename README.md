@@ -26,7 +26,12 @@ So, I have created this Utility for this purpose, which will make the task easy.
         * For each service a jmx file gets generated. (poller & collectD files will always be there)
         * [ well you can see the example of complete excel workbook in my repo.. ](https://github.com/khanabid20/OpenNMS_ConfigGenerator/blob/master/xlsx/opennms-configuration.xlsx)
         
-        
-        
+#### Command to run the jar in command prompt/bash:
+   > with console output
+   `java -jar OpenNMS_ConfigGenerator*.jar opennms-config.xslx`   
+             _OR_
+   > without console output
+    `OpenNMS_ConfigGenerator*.jar opennms-config.xslx`
+
 ### THANK YOU,
  _GOOD LUCK_
