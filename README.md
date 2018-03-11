@@ -5,7 +5,7 @@ Let's know "what OpenNMS is?" first, It's a software and application monitoring 
 
 _For Monitoring any application or system you must have configuration files (like collectD, poller & jmx config file[for applications using Java]), so for the sake you have to create the files manually or you can directly generates the files on the OpenNMS itself by providing respective details._
 
-### _Though you can generates the files online but generating the files for many services would be boring & wouldn't be efficient for copying the generated content & paste it again & again...
+### _Though you can generates the files online but generating the files for many services would be boring & wouldn't be efficient for copying the generated content & paste it again & again..._ ###
 
 So, I have created this Utility for this purpose, which will make the task easy.
 
